@@ -89,7 +89,9 @@ dotNav.addEventListener('click', e => {
 
 // Auto sliding
 const slideTiming = 5000
-let slideInterval = setInterval(() => nextBtn.click(), slideTiming)
+let interval
+const slideInterval = () => interval = setInterval(() => nextBtn.click(), slideTiming)
 
-carousel.addEventListener('mouseover', () => clearInterval(slideInterval))
-carousel.addEventListener('mouseleave', () => slideInterval = setInterval(() => nextBtn.click(), slideTiming))
+carousel.addEventListener('mouseover', () => clearInterval(interval))
+carousel.addEventListener('mouseleave', slideInterval)
+slideInterval()
